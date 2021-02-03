@@ -42,6 +42,9 @@ INSTALLED_APPS = [
 
     # 3rd Party Packages
     'rest_framework',
+
+    # APPS
+    'user_app.apps.UserAppConfig',
 ]
 
 MIDDLEWARE = [
