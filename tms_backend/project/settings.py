@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # APPS
     'user_app.apps.UserAppConfig',
+    'todo_app.apps.TodoAppConfig',
 ]
 
 MIDDLEWARE = [
