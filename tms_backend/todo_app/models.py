@@ -10,7 +10,7 @@ class Task(models.Model):
     date_updated = models.DateTimeField(verbose_name="Date Updated", auto_now=True)
     due_date = models.DateField(verbose_name="Due Date", default=timezone.now().strftime("%Y-%m-%d"))
     is_completed = models.BooleanField(verbose_name="Completed Status", default=False)
-    date_completed = models.DateTimeField(verbose_name="Date Completed", blank=True)
+    date_completed = models.DateTimeField(verbose_name="Date Completed", blank=True, null=True)
 
     class Meta:
         db_table = "todoitems"
