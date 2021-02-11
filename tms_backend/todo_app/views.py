@@ -21,3 +21,11 @@ class TaskAPIOverview(APIView):
         }
 
         return Response(api_urls)
+
+# List View of All Tasks
+class TaskList(ListAPIView):
+    """
+    List all ToDo Task Items
+    """
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
