@@ -29,3 +29,11 @@ class TaskList(ListAPIView):
     """
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+
+# Task Detailed View
+class TaskDetail(RetrieveAPIView):
+    """
+    Retrieve a particular task item instance
+    """
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
