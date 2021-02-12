@@ -129,3 +129,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = "user_app.UserAccount"
+
+# Use Django's standard "django.contrib.auth" permissions or
+# Allow READ-ONLY Access for unauthenticated users.
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES" : [
+        "rest_framework.permissions.AllowAny",
+    ]
+}
