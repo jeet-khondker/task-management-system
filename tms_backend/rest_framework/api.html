@@ -1,0 +1,35 @@
+{% extends "rest_framework/base.html" %}
+
+    {% block title %}
+        Task Management System - API Endpoints
+    {% endblock title %}
+
+    {% comment %}
+        CDN : https://www.bootstrapcdn.com/bootswatch/
+    {% endcomment %}
+
+    {% block bootstrap_theme %}
+        <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/yeti/bootstrap.min.css" 
+        type="text/css">
+    {% endblock bootstrap_theme %}
+
+    {% block branding %}
+        <span>
+            <a class='navbar-brand' rel="nofollow" href="http://127.0.0.1:8000/task-api/">
+                Task Management System API Endpoints <span class="version">1</span>
+            </a>
+        </span>
+    {% endblock branding %}
+
+    {% block breadcrumbs %}
+        <ul class="breadcrumb">
+            {% for breadcrumb_name, breadcrumb_url in breadcrumblist %}
+                {% if forloop.last %}
+                    <li class="active"><a href="{{ breadcrumb_url }}"> {{ breadcrumb_name }} </a></li>
+                {% else %}
+                    <li><a href="{{ breadcrumb_url }}">{{ breadcrumb_name }}</a>&emsp;|&emsp;</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endblock breadcrumbs %}
