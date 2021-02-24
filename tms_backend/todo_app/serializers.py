@@ -21,3 +21,10 @@ class TaskCreateSerializer(ModelSerializer):
     class Meta:
         model = Task
         fields = ["title", "description", "date_created", "due_date"]
+
+# Update ToDo Task Serializer
+class TaskUpdateSerializer(ModelSerializer):
+
+    class Meta:
+        model = Task
+        fields = ["id", "title", "description", "date_updated", "due_date"]
