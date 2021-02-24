@@ -4,7 +4,7 @@ from rest_framework.response import Response
 
 from .models import Task
 
-from .serializers import TaskSerializer
+from .serializers import TaskListSerializer
 
 # Overview of ToDo Task related API Endpoints
 class TaskAPIOverview(APIView):
@@ -28,7 +28,7 @@ class TaskList(ListAPIView):
     List all ToDo Task Items
     """
     queryset = Task.objects.all()
-    serializer_class = TaskSerializer
+    serializer_class = TaskListSerializer
 
 # Task Detailed View
 class TaskDetail(RetrieveAPIView):
@@ -36,4 +36,4 @@ class TaskDetail(RetrieveAPIView):
     Retrieve a particular task item instance
     """
     queryset = Task.objects.all()
-    serializer_class = TaskSerializer
+    serializer_class = TaskListSerializer
