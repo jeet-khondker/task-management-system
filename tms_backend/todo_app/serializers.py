@@ -28,3 +28,10 @@ class TaskUpdateSerializer(ModelSerializer):
     class Meta:
         model = Task
         fields = ["id", "title", "description", "date_updated", "due_date"]
+
+# Delete ToDO Task Serializer
+class TaskDeleteSerializer(ModelSerializer):
+
+    class Meta:
+        model = Task
+        fields = ["id", "title", "description", "date_created", "date_updated", "due_date", "is_completed", "date_completed"]

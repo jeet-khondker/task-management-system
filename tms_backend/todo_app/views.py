@@ -1,10 +1,10 @@
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, RetrieveUpdateAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, RetrieveUpdateAPIView, DestroyAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from .models import Task
 
-from .serializers import TaskListSerializer, TaskDetailSerializer, TaskCreateSerializer, TaskUpdateSerializer
+from .serializers import TaskListSerializer, TaskDetailSerializer, TaskCreateSerializer, TaskUpdateSerializer, TaskDeleteSerializer
 
 # Overview of ToDo Task related API Endpoints
 class TaskAPIOverview(APIView):
@@ -53,3 +53,11 @@ class UpdateTask(RetrieveUpdateAPIView):
     """
     queryset = Task.objects.all()
     serializer_class = TaskUpdateSerializer
+
+# Delete Task View
+class DeleteTask(DestroyAPIView):
+    """
+    Delete a particular task item instance
+    """
+    queryset = Task.objects.all()
+    serializer_class = TaskDeleteSerializer
